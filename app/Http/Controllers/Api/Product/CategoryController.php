@@ -17,12 +17,9 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        // $cateries=Category::whereParent_id(null)->get();
-        $cateries = Category::doesntHave('parent')->get();
-        // $cateries=Category::Has('parent')->get();
         return response()->json([
             'code' => 200,
-            'category' => CategoryResource::collection($cateries)
+            'category' => CategoryResource::collection($categories)
         ], 200);
     }
 
