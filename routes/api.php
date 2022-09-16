@@ -20,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::resource('contactUs',ContactUsController::class);
-Route::resource('category', CategoryController::class);
+Route::apiResource('category', CategoryController::class);
